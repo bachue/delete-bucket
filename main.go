@@ -44,6 +44,9 @@ func main() {
 				files = make([]storage.ListItem, 0, 100)
 			}
 		}
+		if len(files) > 0 {
+			filesChan <- files
+		}
 		if marker == "" {
 			break
 		}
